@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Android Developer Portfolio</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #111;
+    }
+    [data-theme="dark"] {
+      --bg-color: #111;
+      --text-color: #ffffff;
+    }
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: all 0.3s ease;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: var(--bg-color);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .toggle-btn {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--text-color);
+      border-radius: 5px;
+      background: none;
+      color: var(--text-color);
+    }
+    section {
+      padding: 4rem 2rem;
+    }
+    .projects, .testimonials {
+      display: grid;
+      gap: 2rem;
+    }
+    .card {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .github-widget iframe {
+      width: 100%;
+      border: none;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hi, I'm Ajay Singh – Android Developer</h1>
+    <button class="toggle-btn" onclick="toggleTheme()">Toggle Theme</button>
+  </header>
+
+  <section data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>I build native Android apps using Kotlin, Jetpack Compose, and Clean Architecture. I'm passionate about clean UI and great UX.</p>
+  </section>
+
+  <section class="projects" data-aos="fade-up">
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>My Wallet App</h3>
+      <p>Secure Android wallet built with biometric login and Firebase.</p>
+      <a href="#">GitHub</a> | <a href="#">Play Store</a>
+    </div>
+    <!-- Add more project cards here -->
+  </section>
+
+  <section class="github-widget" data-aos="fade-up">
+    <h2>GitHub Activity</h2>
+    <iframe src="https://github-readme-stats.vercel.app/api?username=ajkh35&show_icons=true" loading="lazy"></iframe>
+  </section>
+
+  <!-- <section class="testimonials" data-aos="fade-up">
+    <h2>Testimonials</h2>
+    <div class="card">
+      <p>"Ajay Singh delivered an amazing app for our startup — clean code, on time, and very professional."</p>
+      <strong>- Client Name</strong>
+    </div>
+  </section> -->
+
+  <section data-aos="fade-up">
+    <h2>Contact</h2>
+    <p>Email: ajay35@live.in | <a href="https://www.linkedin.com/in/ajay-singh-29757266/">LinkedIn</a></p>
+  </section>
+
+  <script>
+    function toggleTheme() {
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    });
+  </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
