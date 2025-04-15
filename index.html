@@ -1,125 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ajay Singh – Android Developer</title>
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg-color: #ffffff;
-      --text-color: #111;
-    }
-    [data-theme="dark"] {
-      --bg-color: #111;
-      --text-color: #ffffff;
-    }
-    body {
-      background: var(--bg-color);
-      color: var(--text-color);
-      font-family: sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      transition: all 0.3s ease;
     }
-    header {
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .container {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background-color: var(--bg-color);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      max-width: 960px;
+      margin: 2rem auto;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    .toggle-btn {
-      cursor: pointer;
-      padding: 0.5rem 1rem;
-      border: 1px solid var(--text-color);
-      border-radius: 5px;
-      background: none;
-      color: var(--text-color);
+    .sidebar {
+      background-color: #5c3d8d;
+      color: #fff;
+      width: 35%;
+      padding: 2rem;
+      text-align: center;
     }
-    section {
-      padding: 4rem 2rem;
+    .sidebar img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
     }
-    .projects, .testimonials {
-      display: grid;
-      gap: 2rem;
+    .sidebar h1 {
+      font-size: 1.5rem;
     }
-    .card {
-      border: 1px solid #ccc;
-      padding: 1rem;
-      border-radius: 10px;
-      transition: transform 0.3s;
+    .sidebar p {
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
     }
-    .card:hover {
-      transform: translateY(-5px);
+    .sidebar .contact {
+      margin-top: 2rem;
+      font-size: 0.85rem;
     }
-    .github-widget iframe {
-      width: 100%;
-      border: none;
-      height: 200px;
+    .main {
+      width: 65%;
+      padding: 2rem;
+    }
+    .main section {
+      margin-bottom: 1.5rem;
+    }
+    .main h2 {
+      color: #5c3d8d;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.2rem;
+    }
+    ul {
+      padding-left: 1rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    .job-title {
+      font-weight: bold;
+    }
+    .job-info {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.3rem;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Ajay Singh – Android Developer</h1>
-    <button class="toggle-btn" onclick="toggleTheme()">Toggle Theme</button>
-  </header>
+  <div class="container">
+    <aside class="sidebar">
+      <img src="https://raw.githubusercontent.com/ajkh35/portfolio/main/office_me_cropped.jpg" alt="Profile photo">
+      <h1>Ajay Singh</h1>
+      <p>Android Developer</p>
+      <div class="contact">
+        <p>📞 +91 9717241133</p>
+        <p>📧 <a href="mailto:ajay35@live.in" style="color:#fff;">ajay35@live.in</a></p>
+        <p>🌐 <a href="https://github.com/ajkh35" style="color:#fff;">GitHub</a></p>
+        <p>🔗 <a href="https://www.linkedin.com/in/ajay-singh-29757266/" style="color:#fff;">LinkedIn</a></p>
+      </div>
+    </aside>
+    <main class="main">
+      <section>
+        <h2>Professional Summary</h2>
+        <p>Android Developer with 5+ years of experience building native mobile applications using Kotlin and Java. Proficient in Jetpack, Firebase, MVVM, and Clean Architecture. Experience building scalable apps across mobile, TV, and IoT. Open to relocation to Germany.</p>
+      </section>
 
-  <section data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>Android Developer with 5+ years of experience building native applications using Kotlin and Java. Experienced in MVVM, Jetpack, Firebase, and scalable architecture. Master's degree holder from Germany, open to relocating to Germany for Android roles.</p>
-  </section>
+      <section>
+        <h2>Areas of Expertise</h2>
+        <ul>
+          <li>Kotlin, Java, Android Jetpack</li>
+          <li>MVVM, Clean Architecture</li>
+          <li>Firebase, REST APIs, Push Notifications</li>
+          <li>Room, Retrofit, Hilt, Coroutines</li>
+          <li>IoT communication (UART, LoRa)</li>
+        </ul>
+      </section>
 
-  <section class="projects" data-aos="fade-up">
-    <h2>Projects</h2>
-    <div class="card">
-      <h3>AQI App</h3>
-      <p>Real-time pollution data app using Kotlin/Java, REST APIs, Firebase, charts, deep links. 100K+ downloads on Play Store.</p>
-      <a href="https://play.google.com/store/apps/details?id=com.aqi.data" target="_blank">Play Store</a>
-    </div>
-    <div class="card">
-      <h3>AQI TV App</h3>
-      <p>Android TV app visualizing pollution data. Custom views, Lottie animations, and QR-based linking with mobile version.</p>
-      <a href="https://play.google.com/store/apps/details?id=com.aqi.tv" target="_blank">Play Store</a>
-    </div>
-    <div class="card">
-      <h3>PranaAir UART / LoRa</h3>
-      <p>IoT app for UART serial communication and LoRa gateway data display. Built for Purelogic Labs and IGCAR.</p>
-    </div>
-    <div class="card">
-      <h3>Android Contact Syncing</h3>
-      <p>Researched contact sync with SyncAdapter, duplication handling, and AggregationExceptions. Developed demo and blog.</p>
-      <a href="https://github.com/ajkh35/ContactsDemo" target="_blank">GitHub</a> | <a href="https://ajkh35.blogspot.com/2020/04/syncing-contacts-with-android.html" target="_blank">Blog</a>
-    </div>
-  </section>
+      <section>
+        <h2>Educational History</h2>
+        <p class="job-title">Hof University of Applied Sciences – Germany</p>
+        <p class="job-info">MSc Computer Science | Graduated 2019 | Grade: 1.9</p>
+        <ul>
+          <li>Thesis: Android app development for sensor monitoring</li>
+        </ul>
 
-  <section class="github-widget" data-aos="fade-up">
-    <h2>GitHub Activity</h2>
-    <iframe src="https://github-readme-stats.vercel.app/api?username=ajkh35&show_icons=true" loading="lazy"></iframe>
-  </section>
+        <p class="job-title">GGSIPU – New Delhi, India</p>
+        <p class="job-info">BTech Computer Science | Graduated 2015</p>
+      </section>
 
-  <section data-aos="fade-up">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:ajay35@live.in">ajay35@live.in</a> | Phone: +91 9717241133</p>
-    <p><a href="https://www.linkedin.com/in/ajay-singh-29757266/" target="_blank">LinkedIn</a> | <a href="https://github.com/ajkh35" target="_blank">GitHub</a></p>
-  </section>
+      <section>
+        <h2>Professional History</h2>
+        <p class="job-title">Lead Android Developer – Purelogic Labs</p>
+        <p class="job-info">Mar 2020 – Present | New Delhi, India</p>
+        <ul>
+          <li>Sole Android dev for multiple mobile, tablet, and TV apps</li>
+          <li>Developed AQI App with 100k+ downloads</li>
+          <li>Integrated Firebase, REST APIs, Google Maps, deep links</li>
+        </ul>
 
-  <script>
-    function toggleTheme() {
-      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    });
-  </script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+        <p class="job-title">Android Developer – Quovantis Technologies</p>
+        <p class="job-info">Jun 2015 – May 2016</p>
+        <ul>
+          <li>Worked on contact syncing app with SyncAdapter</li>
+          <li>Built backend integration using Node.js and MySQL</li>
+        </ul>
+
+        <p class="job-title">Android Intern – Solvent Interactive</p>
+        <p class="job-info">Nov 2018 – Jan 2019</p>
+        <ul>
+          <li>Assisted in development of Android app for thesis</li>
+        </ul>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
